@@ -10,7 +10,7 @@
   ```
   ssh-keygen
   ```
-    默认保存位置，两次输入秘钥密码，生成Id_rsa.pub(公钥）和Id_rsa(私钥）
+   默认保存位置，两次输入秘钥密码，生成Id_rsa.pub(公钥）和Id_rsa(私钥）
 ### 5.复制秘钥到存储空间Key文件夹
   ```
   cp -r /root/.ssh/ /sdcard/Key
