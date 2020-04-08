@@ -144,13 +144,15 @@ make_ssh(){
 #!/bin/bash
 ${cur_ssh}
 clear
-echo "请回车键默认保存位置"
 echo 
+echo "请回车键默认保存位置"
 echo 
 ssh-keygen
 cp -r /root/.ssh/* /sdcard/Key
 clear
+echo 
 echo ​"​请在Termux终端再次执行安装命令"​
+echo 
 EOM
     chmod 777 make-ssh.sh
 }
