@@ -142,6 +142,7 @@ make_ssh(){
     bin=make-ssh.sh
     cat > $bin <<- EOM
 #!/bin/bash
+rm -f ssh-apt.sh
 ${cur_ssh}
 clear
 echo 
