@@ -143,6 +143,8 @@ make_ssh(){
     cat > $bin <<- EOM
 #!/bin/bash
 rm -f ssh-apt.sh
+rm -f ssh-pac.sh
+rm -f ssh-yum.sh
 ${cur_ssh}
 clear
 echo 
