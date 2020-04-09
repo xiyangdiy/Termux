@@ -151,6 +151,7 @@ echo
 echo "请回车键默认保存位置"
 echo 
 ssh-keygen
+mkdir /sdcard/Key
 cp -r /root/.ssh/* /sdcard/Key
 clear
 echo 
