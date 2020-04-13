@@ -183,7 +183,9 @@ read -p "请输入数学：" num
     echo "第一次安装请务必使用浏览器完成安装"
     echo 
     echo "http://127.0.0.1:1100"
-	echo 
+    echo 
+    echo "请先启动Nextcloud"
+    echo 
 	read -p "请按任意键返回" any
 	    case "$any" in
 	    *)
