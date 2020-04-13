@@ -226,7 +226,7 @@ read -p "请输入数学：" num
 	1)
         touch $/.bashrc
         txt=$(grep "nextcloud" /data/data/com.termux/files/home/.bashrc)
-        if [ ${txt} == "echo "请打开新会话继续使用" && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
+        if [ ${txt} == "echo 请打开新会话继续使用 && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
         clear
         echo 
         echo "Nextcloud已自启"
@@ -234,7 +234,7 @@ read -p "请输入数学：" num
         clear
         install_nextcloud
         else
-        echo "echo "请打开新会话继续使用" && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" >> $HOME/.bashrc
+        echo "echo 请打开新会话继续使用 && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" >> $HOME/.bashrc
         chmod 777 $HOME/.bashrc
         clear
         echo 
@@ -247,7 +247,7 @@ read -p "请输入数学：" num
 	2)
 	touch $HOME/.bashrc
         txt=$(grep "nextcloud" $HOME/.bashrc)
-	if [ "${txt}" == "echo "请打开新会话继续使用" && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
+	if [ "${txt}" == "echo 请打开新会话继续使用 && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
 	a=$(cat $home/.bashrc | grep -n $txt | sed "s/\:.*$//g")
 	sed -i "$a d" $HOME/.bashrc home
 	clear
