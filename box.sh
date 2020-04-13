@@ -246,8 +246,8 @@ read -p "请输入数学：" num
     	else
     clear
     echo 
-    txt=$(prep "127.0.0.1" $PREFIX/nextcloud/config/config.php)
-    if [ $txt == "" ];then
+    txt=$(grep "127.0.0.1" $PREFIX/nextcloud/config/config.php)
+    if [ "$txt" == "" ];then
         echo "未进行初始化安装，请启动Nextcloud,打开浏览器进入："
 	echo 
 	echo "http://127.0.0.1:1100"
