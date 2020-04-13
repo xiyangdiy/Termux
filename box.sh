@@ -248,7 +248,7 @@ read -p "请输入数学：" num
 	touch $HOME/.bashrc
         txt=$(grep "nextcloud" $HOME/.bashrc)
 	if [ "${txt}" == "echo 请打开新会话继续使用 && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
-	a=$(cat $HOME/.bashrc | grep -n $txt | sed "s/\:.*$//g")
+	a=$(cat $HOME/.bashrc | grep -n nextcloud | sed "s/\:.*$//g")
 	sed -i "$a d" $HOME/.bashrc
 	#clear
         echo 
