@@ -246,10 +246,19 @@ read -p "请输入数学：" num
     	else
     clear
     echo 
-    echo "请确保已经通过浏览器完成安装，否则将出现问题"
-    echo 
-    echo "退出请按CTRL+C"
-    echo 
+    txt=$(prep "127.0.0.1" $PREFIX/nextcloud/config/config.php)
+    if [ $txt == "" ];then
+        echo "未进行初始化安装，请启动Nextcloud,打开浏览器进入："
+	echo 
+	echo "http://127.0.0.1:1100"
+	echo 
+	read -p "请按任意键返回" num
+        case "$num" in
+        *)
+        install_nextcloud
+        ;;
+        esac
+    fi
     echo "局域网访问，内网穿透访问需要添加可信任IP或域名"
     echo 
     echo "局域网访问需要登陆路由器固定IP"
@@ -357,6 +366,12 @@ read -p "请输入数学：" num
         sed -i '9d' $PREFIX/nextcloud/config/config.php
         a=$(cat $PREFIX/nextcloud/config/config.php | grep -n XX | sed "s/\:.*$//g" | head -1)
         done
+	clear
+	echo 
+        echo "已清除指定IP或域名"
+	sleep 3s
+	echo 
+        install_nextcloud
         ;;
         3)
         install_nextcloud
