@@ -256,6 +256,7 @@ read -p "请输入数学：" num
         sleep 3s
         clear
         install_nextcloud
+	fi
 	;;
 	3)
 	install_nextcloud
