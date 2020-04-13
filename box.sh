@@ -63,7 +63,7 @@ read -p "请输入数学：" num
     if [ "${txt}" == "#deb https://dl.bintray.com/grimler/game-packages-24 games stable" ];then
         sed -i 's!#deb https://dl.bintray.com/grimler/game-packages-24 games stable!deb https://dl.bintray.com/grimler/game-packages-24 games stable!g' $PREFIX/etc/apt/sources.list.d/game.list
     fi
-    txt=$(grep "deb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable" $PREFIX/etc/apt/sources.list.d/game.list.d/game.list)
+    txt=$(grep "deb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable" $PREFIX/etc/apt/sources.list.d/game.list)
     if [ "${txt}" == "deb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable" ];then
         sed -i 's!deb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable!#deb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable!g' $PREFIX/etc/apt/sources.list.d/game.list
     fi
