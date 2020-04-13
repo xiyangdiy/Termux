@@ -54,9 +54,9 @@ read -p "请输入数学：" num
     if [ "${txt}" == "#deb https://termux.org/packages/ stable main" ];then
         sed -i 's!#deb https://termux.org/packages/ stable main!deb https://termux.org/packages/ stable main!g' $PREFIX/etc/apt/sources.list
     fi
-    txt=$(grep "deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main" $PREFIX/etc/apt/sources.list)
-    if [ "${txt}" == "deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main" ];then
-        sed -i 's!deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main!#deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main!g' $PREFIX/etc/apt/sources.list
+    txt=$(grep "deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main" $PREFIX/etc/apt/sources.list)
+    if [ "${txt}" == "deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main" ];then
+        sed -i 's!deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main!#deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main!g' $PREFIX/etc/apt/sources.list
     fi
     pkg update
     clear
@@ -68,11 +68,11 @@ read -p "请输入数学：" num
     change_source
     ;;
     2)
-    txt=$(grep "deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main" $PREFIX/etc/apt/sources.list)
+    txt=$(grep "deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main" $PREFIX/etc/apt/sources.list)
     if [ "${txt}" == "" ];then
-        echo "deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main" >> $PREFIX/etc/apt/sources.list
-        elif [ "${txt}" == "#deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main" ];then
-            sed -i 's!#deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main!deb https://mirrors.tuna.tsinghua.edu.cn/termux stable main!g' $PREFIX/etc/apt/sources.list
+        echo "deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main" >> $PREFIX/etc/apt/sources.list
+        elif [ "${txt}" == "#deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main" ];then
+            sed -i 's!#deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main!deb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main!g' $PREFIX/etc/apt/sources.list
     fi
     txt=$(grep "deb https://termux.org/packages/ stable main" $PREFIX/etc/apt/sources.list)
     if [ "${txt}" == "deb https://termux.org/packages/ stable main" ];then
