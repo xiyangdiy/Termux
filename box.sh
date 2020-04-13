@@ -326,7 +326,7 @@ read -p "请输入数学：" num
 	        sed -i "$a d" $PREFIX/nextcloud/config/config.php
 	        clear
 	        echo 
-        	echo "已清除指定IP或域名"
+        	echo "已清除所有IP或域名"
 	        sleep 3s
 	        clear
         	echo 
