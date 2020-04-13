@@ -163,6 +163,14 @@ read -p "请输入数学：" num
     fi
     ;;
     3)
+    if [ ! -d "$PREFIX/nextcloud" ];then
+        clear
+	    echo 
+	    echo "Nextcloud未安装"
+	    sleep 3s
+	    clear
+    	install_nextcloud
+    	else
     touch $HOME/.bashrc
     txt=$(grep "nextcloud" /data/data/com.termux/files/home/.bashrc)
     if [ ${txt} == "echo "请打开新会话继续使用" && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
@@ -183,7 +191,16 @@ read -p "请输入数学：" num
     install_nextcloud
     fi
     ;;
+    fi
     4)
+    if [ ! -d "$PREFIX/nextcloud" ];then
+        clear
+	    echo 
+	    echo "Nextcloud未安装"
+	    sleep 3s
+	    clear
+    	install_nextcloud
+    	else
     clear
     echo 
     echo "局域网访问，内网穿透访问需要添加可信任IP或域名"
@@ -204,8 +221,17 @@ read -p "请输入数学：" num
         ;;
         esac
     ;;
+    fi
     5)
+    if [ ! -d "$PREFIX/nextcloud" ];then
         clear
+	    echo 
+	    echo "Nextcloud未安装"
+	    sleep 3s
+	    clear
+    	install_nextcloud
+    	else
+    clear
     echo 
     echo "清除信任IP或域名"
     echo "
@@ -299,7 +325,16 @@ read -p "请输入数学：" num
     	;;
         esac
     ;;
+    fi
     6)
+    if [ ! -d "$PREFIX/nextcloud" ];then
+        clear
+	    echo 
+	    echo "Nextcloud未安装"
+	    sleep 3s
+	    clear
+    	install_nextcloud
+    	else
     clear
     echo 
     echo "启动Nextcloud后，浏览器进入"
@@ -313,7 +348,16 @@ read -p "请输入数学：" num
 	    ;;
 	    esac
     ;;
+    fi
     7)
+    if [ ! -d "$PREFIX/nextcloud" ];then
+        clear
+	    echo 
+	    echo "Nextcloud未安装"
+	    sleep 3s
+	    clear
+    	install_nextcloud
+    	else
     clear
     echo 
     echo "卸载Nextcloud？"
@@ -365,6 +409,7 @@ read -p "请输入数学：" num
 	    ;;
         esac
     ;;
+    fi
     8)
     main_menu
     ;;
