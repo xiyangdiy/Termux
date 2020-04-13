@@ -224,7 +224,7 @@ read -p "请输入数学：" num
     read -p "请输入数字：" num
         case "$num" in
 	1)
-        touch $HOME/.bashrc
+        touch $/.bashrc
         txt=$(grep "nextcloud" /data/data/com.termux/files/home/.bashrc)
         if [ ${txt} == "echo "请打开新会话继续使用" && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
         clear
@@ -246,10 +246,10 @@ read -p "请输入数学：" num
 	;;
 	2)
 	touch $HOME/.bashrc
-        txt=$(grep "nextcloud" $home/.bashrc)
-	if [ ${txt} == "echo "请打开新会话继续使用" && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
+        txt=$(grep "nextcloud" $HOME/.bashrc)
+	if [ "${txt}" == "echo "请打开新会话继续使用" && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
 	a=$(cat $home/.bashrc | grep -n $txt | sed "s/\:.*$//g")
-	sed -i "$a d" $home/.bashrc
+	sed -i "$a d" $HOME/.bashrc home
 	clear
         echo 
         echo "Nextcloud自启已关闭"
