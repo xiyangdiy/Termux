@@ -515,47 +515,71 @@ read -p "请输入数学：" num
     read -p ​"​请确认是否继续 ? [Y/n] :​"​ yn
         case "$yn" in
 	    Y)
+	    touch $HOME/.bashrc
+            txt=$(grep "nextcloud" $HOME/.bashrc)
+	    if [ "${txt}" == "echo 请打开新会话继续使用 && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
+	    a=$(cat $HOME/.bashrc | grep -n nextcloud | sed "s/\:.*$//g")
+	    sed -i "$a d" $HOME/.bashrc
+	    fi
 	    rm -rf $PREFIX/nextcloud
 	    clear
-    	echo 
+    	    echo 
 	    echo "Nextcloud已卸载"
-    	sleep 3s
-    	clear
+    	    sleep 3s
+            clear
 	    echo 
 	    install_nextcloud
 	    ;;
-        y)
-        rm -rf $PREFIX/nextcloud
-        clear
-    	echo 
+            y)
+            touch $HOME/.bashrc
+            txt=$(grep "nextcloud" $HOME/.bashrc)
+	    if [ "${txt}" == "echo 请打开新会话继续使用 && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
+	    a=$(cat $HOME/.bashrc | grep -n nextcloud | sed "s/\:.*$//g")
+	    sed -i "$a d" $HOME/.bashrc
+	    fi
+	    rm -rf $PREFIX/nextcloud
+            clear
+    	    echo 
 	    echo "Nextcloud已卸载"
-    	sleep 3s
+    	    sleep 3s
 	    clear
 	    echo 
 	    install_nextcloud
-    	;;
+            ;;
 	    Yes)
-    	rm -rf $PREFIX/nextcloud
+            touch $HOME/.bashrc
+            txt=$(grep "nextcloud" $HOME/.bashrc)
+	    if [ "${txt}" == "echo 请打开新会话继续使用 && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
+	    a=$(cat $HOME/.bashrc | grep -n nextcloud | sed "s/\:.*$//g")
+	    sed -i "$a d" $HOME/.bashrc
+	    fi
+	    rm -rf $PREFIX/nextcloud
 	    clear
-    	echo 
+    	    echo 
 	    echo "Nextcloud已卸载"
 	    sleep 3s
 	    clear
 	    echo 
-    	install_nextcloud
+    	    install_nextcloud
 	    ;;
-    	yes)
-    	rm -rf $PREFIX/nextcloud
-    	clear
+    	    yes)
+    	    touch $HOME/.bashrc
+            txt=$(grep "nextcloud" $HOME/.bashrc)
+	    if [ "${txt}" == "echo 请打开新会话继续使用 && echo  && php -S 0.0.0.0:1100 -t $PREFIX/nextcloud" ];then
+	    a=$(cat $HOME/.bashrc | grep -n nextcloud | sed "s/\:.*$//g")
+	    sed -i "$a d" $HOME/.bashrc
+	    fi
+	    rm -rf $PREFIX/nextcloud
+    	    clear
 	    echo 
-    	echo "Nextcloud已卸载"
+    	    echo "Nextcloud已卸载"
 	    sleep 3s
 	    clear
 	    echo 
 	    install_nextcloud
-    	;;
-        *)
-        install_nextcloud
+    	    ;;
+            *)
+            install_nextcloud
 	    ;;
         esac
     fi
