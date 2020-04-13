@@ -190,8 +190,8 @@ read -p "请输入数学：" num
     clear
     install_nextcloud
     fi
-    ;;
     fi
+    ;;
     4)
     if [ ! -d "$PREFIX/nextcloud" ];then
         clear
@@ -220,8 +220,8 @@ read -p "请输入数学：" num
         install_nextcloud
         ;;
         esac
-    ;;
     fi
+    ;;
     5)
     if [ ! -d "$PREFIX/nextcloud" ];then
         clear
@@ -324,8 +324,8 @@ read -p "请输入数学：" num
     	install_nextcloud
     	;;
         esac
-    ;;
     fi
+    ;;
     6)
     if [ ! -d "$PREFIX/nextcloud" ];then
         clear
@@ -347,8 +347,8 @@ read -p "请输入数学：" num
 	    install_nextcloud
 	    ;;
 	    esac
-    ;;
     fi
+    ;;
     7)
     if [ ! -d "$PREFIX/nextcloud" ];then
         clear
@@ -408,8 +408,8 @@ read -p "请输入数学：" num
         install_nextcloud
 	    ;;
         esac
-    ;;
     fi
+    ;;
     8)
     main_menu
     ;;
