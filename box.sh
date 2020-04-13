@@ -246,6 +246,10 @@ read -p "请输入数学：" num
     	else
     clear
     echo 
+    echo "请确保已经通过浏览器完成安装，否则将出现问题"
+    echo 
+    echo "退出请按CTRL+C"
+    echo 
     echo "局域网访问，内网穿透访问需要添加可信任IP或域名"
     echo 
     echo "局域网访问需要登陆路由器固定IP"
