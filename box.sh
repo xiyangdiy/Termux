@@ -172,7 +172,57 @@ read -p "请输入数学：" num
     pkg install php php-fpm sqlite coreutils openssl-tool
     rm -f $PREFIX/nextcloud.zip
     latest_version=$(wget -qO- "https://download.nextcloud.com/server/releases/?C=N;O=D"|grep 'zip">nextcloud-'|head -1|sed -r "s/.*nextcloud-//g"|sed "s/.zip.*$//g")
-    wget https://download.nextcloud.com/server/releases/nextcloud-${latest_version}.zip -O $PREFIX/nextcloud.zip
+    clear
+    echo 
+    echo "没有VPN，自动下载速度极慢，可选择手动下载"
+    echo "
+     1.自动
+     2.手动
+     3.返回
+    "
+    read -p "请输入数字：" num
+        case "$num" in
+	1)
+	wget https://download.nextcloud.com/server/releases/nextcloud-${latest_version}.zip -O $PREFIX/nextcloud.zip
+	;;
+	2)
+	clear
+	echo 
+	echo "请使用浏览器等外部下载器下载Nextcloud安装包"
+	echo 
+	echo "保存在外部存储器根目录"
+	echo 
+	echo "https://download.nextcloud.com/server/releases/nextcloud-${latest_version}.zip"
+	echo 
+	read -p "请按任意键继续" num
+	    case "$num" in
+	    *)
+	    ;;
+	    esac
+	if [ ! -f "/sdcard/nextcloud-${latest_version}.zip" ];then
+	    clear
+	    echo 
+	    echo "nextcloud-${latest_version}.zip 未保存在外部存储器根目录"
+	    sleep 3s
+	    clear
+    	    install_nextcloud
+	    else
+	    mv /sdcard/nextcloud-${latest_version}.zip $PREFIX/nextcloud.zip
+	fi
+	;;
+	3)
+	install_nextcloud
+	;;
+	*)
+	clear
+	echo 
+        echo "请输入正确数字！"
+    	sleep 3s
+	clear
+    	echo 
+    	install_nextcloud
+	;;
+	esac    
     unzip -d $PREFIX $PREFIX/nextcloud.zip
     rm -f $PREFIX/nextcloud.zip
     clear
