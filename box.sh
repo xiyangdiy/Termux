@@ -76,7 +76,7 @@ read -p "请输入数学：" num
     if [ "${txt}" == "deb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable" ];then
         sed -i 's!deb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable!#deb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable!g' $PREFIX/etc/apt/sources.list.d/science.list
     fi
-    pkg update
+    pkg update && apt upgrade
     clear
 	echo 
 	echo "已更换为官方源"
@@ -118,8 +118,7 @@ read -p "请输入数学：" num
     if [ "${txt}" == "deb https://dl.bintray.com/grimler/science-packages-24 science stable" ];then
         sed -i 's!deb https://dl.bintray.com/grimler/science-packages-24 science stable!#deb https://dl.bintray.com/grimler/science-packages-24 science stable!g' $PREFIX/etc/apt/sources.list.d/science.list
     fi
-    
-    pkg update
+    pkg update && apt upgrade
     clear
 	echo 
 	echo "已更换为清华源"
