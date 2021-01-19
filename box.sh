@@ -174,7 +174,7 @@ read -p "请输入数学：" num
     latest_version=$(wget -qO- "https://download.nextcloud.com/server/releases/?C=N;O=D"|grep 'zip">nextcloud-'|head -1|sed -r "s/.*nextcloud-//g"|sed "s/.zip.*$//g")
     clear
     echo 
-    echo "没有VPN，自动下载速度极慢，可选择手动下载"
+    echo "如果没有VPN，自动下载速度可能极慢，可选择手动下载"
     echo "
      1.自动
      2.手动
